@@ -17,7 +17,7 @@ function Posts() {
 export default Posts;
 
 export const loader = async () => {
-  const response = await fetch("http://localhost:8080/posts");
+  const response = await fetch("https://post-sticks-backend.onrender.com/posts");
   const postsData = await response.json();
   return postsData.posts;
 };

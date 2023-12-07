@@ -32,7 +32,7 @@ export default NewPost;
 export const action = async ({ request }) => {
   const formData = await request.formData();
   const postData = Object.fromEntries(formData);
-  await fetch("http://localhost:8080/posts", {
+  await fetch("https://post-sticks-backend.onrender.com/posts", {
     method: "POST",
     body: JSON.stringify({ ...postData, comments: [] }),
     headers: {
