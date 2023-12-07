@@ -1,0 +1,20 @@
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import classes from "./Modal.module.css";
+
+const Modal = ({ children }) => {
+  const navigate = useNavigate();
+  const onCloseHandler = () => {
+    navigate("..");
+  };
+  return (
+    <>
+      <div className={classes.backdrop} onClick={onCloseHandler} />
+      <dialog open className={classes.modal}>
+        {children}
+      </dialog>
+    </>
+  );
+};
+
+export default Modal;
